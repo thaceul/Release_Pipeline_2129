@@ -18,26 +18,21 @@ namespace ReleasePipeDemoApp.Tests.Controllers
         {
             // Arrange
             ExamplesController controller = new ExamplesController();
-
             // Act
             IEnumerable<string> result = controller.Get();
-
             // Assert
             Assert.IsNotNull(result);
             Assert.AreEqual(2, result.Count());
             Assert.AreEqual("wrong", result.ElementAt(0));
             Assert.AreEqual("wrong", result.ElementAt(1));
         }
-
         [TestMethod]
         public void GetById()
         {
             // Arrange
             ExamplesController controller = new ExamplesController();
-
             // Act
             string result = controller.Get(5);
-
             // Assert
             Assert.AreEqual("wrong", result);
         }
